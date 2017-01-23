@@ -15,9 +15,12 @@ var prepareRequests = function(request, response, next) {
     request.ip = request.headers["x-forwarded-for"] || request.connection.remoteAddress;
 
     // cross-origin request headers
-    response.header("Access-Control-Allow-Origin", "*");
-    response.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS");
-    response.header("Access-Control-Allow-Headers", "X-Requested-With,Content-Type");
+    
+response.header("Access-Control-Allow-Origin", "*");
+    
+response.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS");
+    
+response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
     // post data
     if(request.method != "POST" || (request.body && request.body.data)) {
