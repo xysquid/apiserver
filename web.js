@@ -63,16 +63,28 @@ app.listen(port, function() {
 
 // cross domain
 var crossdomain = "<?xml version=\"1.0\"?><!DOCTYPE cross-domain-policy SYSTEM \"http://www.adobe.com/xml/dtds/cross-domain-policy.dtd\"><cross-domain-policy><site-control permitted-cross-domain-policies=\"master-only\" /><allow-access-from domain=\"*\" to-ports=\"*\" secure=\"false\" /><allow-http-request-headers-from domain=\"*\" headers=\"*\" /></cross-domain-policy>";
+
+
 var XML_HEADER = {"Content-Type": "text/xml"};
 
+
+
 router.all("/crossdomain.xml", function(request, response) {
-    response.writeHead(200, XML_HEADER);
-    response.end(crossdomain);
+    
+response.writeHead(200, XML_HEADER);
+    
+response.end(crossdomain);
+
 });
 
 // everything else
+
+
 router.all("/v1", function(req, res, next) {
-    v1.router(req, res, next);
+    
+res.writeHead(200, XML_HEADER);
+  
+v1.router(req, res, next);
 });
 
 app.use("/", router);
