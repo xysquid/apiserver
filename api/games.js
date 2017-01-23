@@ -1,6 +1,23 @@
 var db = require(__dirname + "/database.js"),
-    datetime = require(__dirname + "/datetime.js"),
-    gamelist = {};
+    
+datetime = require(__dirname + "/datetime.js"),
+    
+gamelist = {};
+
+// testing:
+ gamelist["58844321f36d285556538974"] = {
+        publickey: "aaa",
+        privatekey: "aaa",
+        enabled: true,
+        leaderboards: true,
+        playerlevels: true,
+        gamevars: true,
+        geoip: true,
+		achievements: true
+    };
+
+
+
 
 var games = module.exports = {
 
