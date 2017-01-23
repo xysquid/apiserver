@@ -83,9 +83,9 @@ response.end(crossdomain);
 router.all("/v1", function(req, res, next) {
     
 // testing:
-res.writeHead(200, XML_HEADER);
+//res.writeHead(200, XML_HEADER);
   
-res.write(crossdomain);
+//res.write(crossdomain);
 
 
 v1.router(req, res, next);
