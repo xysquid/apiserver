@@ -5,7 +5,7 @@ datetime = require(__dirname + "/datetime.js"),
 gamelist = {};
 
 // testing:
- gamelist["58844321f36d285556538974"] = {
+ gamelist["aaa"] = {
         publickey: "aaa",
         privatekey: "aaa",
         enabled: true,
